@@ -1,0 +1,46 @@
+{
+  "name": "ChatBot",
+  "description": "Simple ChatBot in Telethon.",
+  "logo": "https://static.botsrv.com/website/img/quriobot_favicon.1727b193.png",
+  "keywords": [
+    "telegram",
+    "chatbot",
+    "plugin",
+    "telegram-chatbot",
+    "productivity"
+  ],
+  "repository": "https://github.com/BotzCity/ChatBot",
+  "website": "https://github.com/BotzCity/ChatBot",
+  "success_url": "https://github.com/BotzCity/ChatBot",
+  "env": {
+    "BOT_TOKEN": {
+      "description": "Your Bot Token.",
+      "value": ""
+    },
+    "OWNER_ID": {
+      "description": "Your telegram Owner ID",
+      "value": ""
+    },
+    "APP_ID": {
+      "description": "Get this value from my.telegram.org! Please do not steal",
+      "value": ""
+    },
+    "API_HASH": {
+      "description": "Get this value from my.telegram.org! Please do not steal",
+      "value": ""
+    }
+  },
+  "addons": [
+    {
+      "plan": "heroku-postgresql",
+      "options": {
+        "version": "12"
+      }
+    }
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ]
+}
