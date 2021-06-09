@@ -21,6 +21,10 @@
       "description": "Your telegram Owner ID",
       "value": ""
     },
+    "CHANNEL": {
+      "description": "Your channel URL example t.me/BotzCity",
+      "value": ""
+    },
     "APP_ID": {
       "description": "Get this value from my.telegram.org! Please do not steal",
       "value": ""
