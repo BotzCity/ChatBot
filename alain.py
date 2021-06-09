@@ -91,7 +91,7 @@ async def _(event):
       hakk = event.text
       await alain.send_message(int(Los), hakk, parse_mode="markdown")
 
-@alain.on(events.NewMessage(pattern="(hi|Hi|HI|hI|HELLO|Hello)$"))
+@alain.on(events.NewMessage(pattern="(hi|Hi|HI|hI|HELLO|Hello)"))
 async def _(event):
    await event.reply(f"""
 
