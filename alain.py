@@ -16,6 +16,7 @@ try:
   APP_ID = var.APP_ID
   API_HASH = var.API_HASH
   OWNER_ID = var.OWNER_ID
+  CHANNEL = os.environ.get("CHANNEL")
   
   alain = TelegramClient('Alain', APP_ID, API_HASH).start(bot_token=BOT_TOKEN)
   
@@ -33,8 +34,8 @@ async def upro(ch, event, xD):
   
 @alain.on(events.NewMessage(pattern="^[/!](start|START|Start)$", func=lambda e: e.is_private))
 async def _(event):
-  join = [[Button.url("Jᴏɪɴ ᴄʜᴀɴɴᴇʟ", f"t.me/BotzCity")]]
-  lol = await upro("BotzCity", event, alain)
+  join = [[Button.url("Jᴏɪɴ ᴄʜᴀɴɴᴇʟ", f"{CHANNEL}")]]
+  lol = await upro(f"{CHANNEL}", event, alain)
   if lol is False:
        await event.reply(f"**Heya {event.sender.first_name}, join my channel to use me!**", buttons=join)
        return
@@ -47,8 +48,8 @@ async def _(event):
 
 @alain.on(events.callbackquery.CallbackQuery(data=re.compile(b"owner")))
 async def _(event):
-   join = [[Button.url("Jᴏɪɴ ᴄʜᴀɴɴᴇʟ", f"t.me/BotzCity")]]
-   lol = await upro("BotzCity", event, alain)
+   join = [[Button.url("Jᴏɪɴ ᴄʜᴀɴɴᴇʟ", f"{CHANNEL}")]]
+   lol = await upro(f"{CHANNEL}", event, alain)
    if lol is False:
        await event.reply(f"**Heya {event.sender.first_name}, join my channel to use me!**", buttons=join)
        return
@@ -59,8 +60,8 @@ async def _(event):
   
 @alain.on(events.NewMessage(func=lambda e: e.is_private))
 async def _(event):
-  join = [[Button.url("Jᴏɪɴ ᴄʜᴀɴɴᴇʟ", f"t.me/BotzCity")]]
-  lol = await upro("BotzCity", event, alain)
+  join = [[Button.url("Jᴏɪɴ ᴄʜᴀɴɴᴇʟ", f"{CHANNEL}")]]
+  lol = await upro(f"{CHANNEL}", event, alain)
   if lol is False:
        await event.reply(f"**Heya {event.sender.first_name}, join my channel to use me!**", buttons=join)
        return
