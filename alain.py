@@ -67,7 +67,8 @@ async def _(event):
        return
   if event.sender.id == OWNER_ID and event.is_reply:
        return
-  if event.raw_text.startswith("/"):
+  bl = ["/", "hi"]
+  if event.raw_text.startswith(bl):
        return
   if event.media:
     k = f"{event.text}\n\n➖➖➖➖➖➖➖\n**Message from** **[{event.sender.first_name}](tg://user?id={event.sender.id})**"
