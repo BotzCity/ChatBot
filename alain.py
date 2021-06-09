@@ -67,8 +67,8 @@ async def _(event):
        return
   if event.sender.id == OWNER_ID and event.is_reply:
        return
-  bl = ["/", "hi"]
-  if event.raw_text.startswith(bl):
+  bl = ["/"]
+  if event.raw_text.startswith("/"):
        return
   if event.media:
     k = f"{event.text}\n\n➖➖➖➖➖➖➖\n**Message from** **[{event.sender.first_name}](tg://user?id={event.sender.id})**"
@@ -94,6 +94,10 @@ async def _(event):
 
 @alain.on(events.NewMessage(pattern="(hi|Hi|HI|hI|HELLO|Hello)"))
 async def _(event):
+   if event.is_group:
+     pass
+   if event.is_private:
+     pass
    await event.reply(f"""
 
 🌺✨✨🌺✨🌺🌺🌺
